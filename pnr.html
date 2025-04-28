@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PNR Status</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header>
+    <div class="logo">IRCTC</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="book.html">Book Tickets</a>
+      <a href="pnr.html">PNR Status</a>
+      <a href="schedule.html">Schedule</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Check PNR Status</h1>
+    <form id="pnr-form">
+      <div class="input-group"><label>PNR Number</label><input type="text" required /></div>
+      <button type="submit">Check Status</button>
+    </form>
+    <div id="pnr-output"></div>
+  </main>
+
+  <footer><p>&copy; 2025 IRCTC Clone</p></footer>
+  <script>
+    document.getElementById('pnr-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('pnr-output').textContent = "Your train is confirmed!";
+    });
+  </script>
+</body>
+</html>

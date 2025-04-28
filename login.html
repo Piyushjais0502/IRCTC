@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - IRCTC Clone</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header>
+    <div class="logo">IRCTC</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="pnr.html">PNR Status</a>
+      <a href="schedule.html">Schedule</a>
+      <a href="login.html">Login</a>
+      <a href="signup.html">Sign Up</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Login</h1>
+    <form id="login-form">
+      <div class="input-group"><label>Email</label><input type="email" required /></div>
+      <div class="input-group"><label>Password</label><input type="password" required /></div>
+      <button type="submit">Login</button>
+    </form>
+    <p>Don't have an account? <a href="signup.html">Sign up here</a>.</p>
+    <div id="login-output"></div>
+  </main>
+
+  <footer><p>&copy; 2025 IRCTC Clone</p></footer>
+  <script>
+    document.getElementById('login-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('login-output').textContent = "Login successful!";
+    });
+  </script>
+</body>
+</html>
