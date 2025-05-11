@@ -1,31 +1,101 @@
-
-* { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: 
-    border-box; 
-}
-body { 
-    font-family: 'Segoe UI', sans-serif; 
-    background: #f5f9ff; color: #333; 
-}
-header { 
-    background: #004080; 
-    color: white; 
-    display: flex; 
-    justify-content: space-between;
-    padding: 1rem; 
-}
-nav a { 
-    color: white; 
-    margin-left: 1rem; 
-    text-decoration: none; 
-}
-main { 
-    max-width: 700px; 
-    margin: 2rem auto; 
-    background: white; 
-    padding: 2rem; 
-    border-radius: 10px; 
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Header */
+header {
+  background-color: #1d6db2;
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+}
+
+header .logo {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+header nav {
+  margin-top: 10px;
+}
+
+header nav a {
+  margin: 0 15px;
+  color: white;
+  text-decoration: none;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+
+/* Main Content */
+main {
+  margin-top: 20px;
+}
+
+main h1 {
+  text-align: center;
+  color: #333;
+}
+
+/* Form styling */
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+form label {
+  display: block;
+  font-size: 1em;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="date"],
+form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+form input[type="submit"] {
+  background-color: #1d6db2;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+  background-color: #155d8d;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px 0;
+  background-color: #1d6db2;
+  color: white;
+}

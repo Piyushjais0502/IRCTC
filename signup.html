@@ -1,43 +1,43 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sign Up - IRCTC Clone</title>
-  <link rel="stylesheet" href="style.css"/>
-</head>
-<body>
-  <header>
-    <div class="logo">IRCTC</div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="book.html">Book Tickets</a>
-      <a href="pnr.html">PNR Status</a>
-      <a href="schedule.html">Schedule</a>
-      <a href="login.html">Login</a>
-      <a href="signup.html">Sign Up</a>
-    </nav>
-  </header>
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Sign Up - IRCTC Clone</title>
+    <link rel="stylesheet" href="style.css"/>
+  </head>
+  <body>
+    <header>
+      <div class="logo">IRCTC</div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="book.html">Book Tickets</a>
+        <a href="pnr.html">PNR Status</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="login.html">Login</a>
+        <a href="signup.html">Sign Up</a>
+      </nav>
+    </header>
 
-  <main>
-    <h1>Sign Up</h1>
-    <form id="signup-form">
-      <div class="input-group"><label>Name</label><input type="text" required /></div>
-      <div class="input-group"><label>Email</label><input type="email" required /></div>
-      <div class="input-group"><label>Password</label><input type="password" required /></div>
-      <button type="submit">Register</button>
-    </form>
-    <p>Already have an account? <a href="login.html">Login here</a>.</p>
-    <div id="signup-output"></div>
-  </main>
+    <main>
+      <h1>Sign Up</h1>
+      <form id="signup-form">
+        <div class="input-group"><label>Name</label><input type="text" required /></div>
+        <div class="input-group"><label>Email</label><input type="email" required /></div>
+        <div class="input-group"><label>Password</label><input type="password" required /></div>
+        <button type="submit">Register</button>
+      </form>
+      <p>Already have an account? <a href="login.html">Login here</a>.</p>
+      <div id="signup-output"></div>
+    </main>
 
-  <footer><p>&copy; 2025 IRCTC Clone</p></footer>
-  <script>
-    document.getElementById('signup-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      document.getElementById('signup-output').textContent = "Registration successful!";
-    });
-  </script>
-</body>
-</html>
+    <footer><p>&copy; 2025 IRCTC Clone</p></footer>
+    <script>
+      document.getElementById('signup-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        document.getElementById('signup-output').textContent = "Registration successful!";
+      });
+    </script>
+  </body>
+  </html>

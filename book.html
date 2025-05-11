@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>IRCTC - Book Tickets</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <header>
+    <div class="logo">IRCTC</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="pnr.html">PNR Status</a>
+      <a href="schedule.html">Schedule</a>
+      <a href="book.html">Book Tickets</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+  </header>
+  <h2>IRCTC Book Tickets</h2>
+  <form>
+    <label for="source">From Station:</label><br>
+    <input type="text" id="source" name="source" required><br><br>
+
+    <label for="destination">To Station:</label><br>
+    <input type="text" id="destination" name="destination" required><br><br>
+
+    <label for="date">Travel Date:</label><br>
+    <input type="date" id="date" name="date" required><br><br>
+
+    <label for="class">Class:</label><br>
+    <select id="class" name="class" required>
+      <option value="">Select class</option>
+      <option value="SL">Sleeper (SL)</option>
+      <option value="3A">AC 3 Tier (3A)</option>
+      <option value="2A">AC 2 Tier (2A)</option>
+      <option value="1A">First AC (1A)</option>
+      <option value="CC">Chair Car (CC)</option>
+    </select><br><br>
+
+    <label for="passenger">Passenger Name:</label><br>
+    <input type="text" id="passenger" name="passenger" required><br><br>
+
+    <label for="age">Passenger Age:</label><br>
+    <input type="number" id="age" name="age" required><br><br>
+
+    <label for="gender">Gender:</label><br>
+    <select id="gender" name="gender" required>
+      <option value="">Select gender</option>
+      <option value="M">Male</option>
+      <option value="F">Female</option>
+      <option value="O">Other</option>
+    </select><br><br>
+
+    <input type="submit" value="Book Now">
+  </form>
+</body>
+</html>
