@@ -1,16 +1,15 @@
-
-  <!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Sign Up - IRCTC Clone</title>
-    <link rel="stylesheet" href="style.css"/>
-  </head>
-  <body>
-    <header>
-      <div class="logo">IRCTC</div>
-      <nav>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header>
+    <div class="logo">Indian Railways</div>
+    <nav>
       <a href="index.html">Home</a>
       <a href="book.html">Book Tickets</a>
       <a href="pnr.html">PNR Status</a>
@@ -18,27 +17,45 @@
       <a href="login.html">Login</a>
       <a href="signup.html">Sign Up</a>
     </nav>
-      </nav>
-    </header>
-
-    <main>
-      <h1>Sign Up</h1>
+    <button id="theme-toggle">Dark Mode</button>
+  </header>
+  <main>
+    <div class="card">
+      <h2>Register</h2>
       <form id="signup-form">
-        <div class="input-group"><label>Name</label><input type="text" required /></div>
-        <div class="input-group"><label>Email</label><input type="email" required /></div>
-        <div class="input-group"><label>Password</label><input type="password" required /></div>
-        <button type="submit">Register</button>
+        <div class="input-group">
+          <label>Name</label>
+          <input type="text" required placeholder="Your full name"/>
+          <div class="error"></div>
+        </div>
+        <div class="input-group">
+          <label>Email</label>
+          <input type="email" required placeholder="you@example.com"/>
+          <div class="error"></div>
+        </div>
+        <div class="input-group">
+          <label>Password</label>
+          <input type="password" required placeholder="••••••••"/>
+          <div class="error"></div>
+        </div>
+        <button type="submit" class="btn">Sign Up</button>
       </form>
-      <p>Already have an account? <a href="login.html">Login here</a>.</p>
-      <div id="signup-output"></div>
-    </main>
-
-    <footer><p>&copy; 2025 IRCTC Clone</p></footer>
-    <script>
-      document.getElementById('signup-form').addEventListener('submit', function(e) {
-        e.preventDefault();
-        document.getElementById('signup-output').textContent = "Registration successful!";
-      });
-    </script>
-  </body>
-  </html>
+      <p style="text-align:center; margin-top:1rem;">
+        Already have an account? <a href="login.html">Login here</a>
+      </p>
+      <div id="signup-output" style="text-align:center; margin-top:1rem;"></div>
+    </div>
+  </main>
+  <footer>&copy; 2025 IRCTC Clone</footer>
+  <script>
+    document.getElementById('theme-toggle').onclick = function() {
+      document.body.classList.toggle('dark');
+      this.textContent = document.body.classList.contains('dark') ? 'Light Mode' : 'Dark Mode';
+    };
+    document.getElementById('signup-form').addEventListener('submit', e => {
+      e.preventDefault();
+      document.getElementById('signup-output').textContent = "🎉 Registration successful!";
+    });
+  </script>
+</body>
+</html>

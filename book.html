@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>IRCTC - Book Tickets</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Book Tickets</title>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    <header>
-    <div class="logo">IRCTC</div>
+  <header>
+    <div class="logo">Indian Railways</div>
     <nav>
       <a href="index.html">Home</a>
       <a href="book.html">Book Tickets</a>
@@ -15,44 +17,77 @@
       <a href="login.html">Login</a>
       <a href="signup.html">Sign Up</a>
     </nav>
-    </nav>
+    <button id="theme-toggle">Dark Mode</button>
   </header>
-  <h2>IRCTC Book Tickets</h2>
-  <form>
-    <label for="source">From Station:</label><br>
-    <input type="text" id="source" name="source" required><br><br>
+  <main>
+    <div class="card">
+      <h2>Book Your Ticket</h2>
+      <form id="book-form">
+        <div class="input-group">
+          <label for="source">From Station</label>
+          <input id="source" name="source" type="text" placeholder="e.g. Mumbai Central" required/>
+          <div class="error"></div>
+        </div>
+        <div class="input-group">
+          <label for="destination">To Station</label>
+          <input id="destination" name="destination" type="text" placeholder="e.g. Delhi Junction" required/>
+          <div class="error"></div>
+        </div>
+        <div class="input-group">
+          <label for="date">Travel Date</label>
+          <input id="date" name="date" type="date" required/>
+          <div class="error"></div>
+        </div>
+        <div class="input-group">
+          <label for="class">Class</label>
+          <select id="class" name="class" required>
+            <option value="">Select...</option>
+            <option>SL</option><option>3A</option><option>2A</option><option>1A</option><option>CC</option>
+          </select>
+          <div class="error"></div>
+        </div>
+        <button type="submit" class="btn">Search Trains</button>
+      </form>
 
-    <label for="destination">To Station:</label><br>
-    <input type="text" id="destination" name="destination" required><br><br>
+      <!-- Mock Results -->
+      <table class="results-table" id="results" style="display:none">
+        <thead>
+          <tr>
+            <th>Train No</th><th>Name</th><th>Departure</th><th>Arrival</th><th>Fare</th><th>Book</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </main>
+  <footer>&copy; 2025 IRCTC Clone</footer>
 
-    <label for="date">Travel Date:</label><br>
-    <input type="date" id="date" name="date" required><br><br>
+  <script>
+    // theme toggle
+    document.getElementById('theme-toggle').onclick = function() {
+      document.body.classList.toggle('dark');
+      this.textContent = document.body.classList.contains('dark') ? 'Light Mode' : 'Dark Mode';
+    };
 
-    <label for="class">Class:</label><br>
-    <select id="class" name="class" required>
-      <option value="">Select class</option>
-      <option value="SL">Sleeper (SL)</option>
-      <option value="3A">AC 3 Tier (3A)</option>
-      <option value="2A">AC 2 Tier (2A)</option>
-      <option value="1A">First AC (1A)</option>
-      <option value="CC">Chair Car (CC)</option>
-    </select><br><br>
+    // set default date to today
+    document.getElementById('date').valueAsDate = new Date();
 
-    <label for="passenger">Passenger Name:</label><br>
-    <input type="text" id="passenger" name="passenger" required><br><br>
-
-    <label for="age">Passenger Age:</label><br>
-    <input type="number" id="age" name="age" required><br><br>
-
-    <label for="gender">Gender:</label><br>
-    <select id="gender" name="gender" required>
-      <option value="">Select gender</option>
-      <option value="M">Male</option>
-      <option value="F">Female</option>
-      <option value="O">Other</option>
-    </select><br><br>
-
-    <input type="submit" value="Book Now">
-  </form>
+    // mock search
+    document.getElementById('book-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const tbody = document.querySelector('#results tbody');
+      tbody.innerHTML = `
+        <tr>
+          <td>12951</td><td>Gorakhdham Express</td><td>08:00</td><td>20:00</td><td>₹1,150</td>
+          <td><button class="btn">Book Now</button></td>
+        </tr>
+        <tr>
+          <td>12953</td><td>Gorakhdham Express</td><td>16:00</td><td>04:00</td><td>₹1,200</td>
+          <td><button class="btn">Book Now</button></td>
+        </tr>
+      `;
+      document.getElementById('results').style.display = 'table';
+    });
+  </script>
 </body>
 </html>

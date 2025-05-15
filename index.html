@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>IRCTC Clone - Home</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>IRCTC Clone</title>
   <link rel="stylesheet" href="style.css"/>
-
 </head>
 <body>
   <header>
-    <div class="logo">IRCTC</div>
+    <div class="logo">Indian Railways</div>
     <nav>
       <a href="index.html">Home</a>
       <a href="book.html">Book Tickets</a>
@@ -18,15 +17,21 @@
       <a href="login.html">Login</a>
       <a href="signup.html">Sign Up</a>
     </nav>
+    <button id="theme-toggle">Dark Mode</button>
   </header>
-
   <main>
-    <h1>Welcome to IRCTC Clone</h1>
-    <p>This is a demo of IRCTC train booking website clone.</p>
+    <div class="card">
+      <h1>Welcome to IRCTC Clone</h1>
+      <p>This is a demo train-booking frontend with modern UI/UX.</p>
+    </div>
   </main>
-
-  <footer>
-    <p>&copy; 2025 IRCTC Clone</p>
-  </footer>
+  <footer>&copy; 2025 IRCTC Clone</footer>
+  <script>
+    const toggle = document.getElementById('theme-toggle');
+    toggle.onclick = () => {
+      document.body.classList.toggle('dark');
+      toggle.textContent = document.body.classList.contains('dark') ? 'Light Mode' : 'Dark Mode';
+    };
+  </script>
 </body>
 </html>
