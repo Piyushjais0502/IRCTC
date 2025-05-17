@@ -5,10 +5,10 @@
   box-sizing: border-box;
 }
 
-div{
+div {
   box-sizing: border-box;
-
 }
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: var(--text);
@@ -55,14 +55,18 @@ header {
   flex-wrap: wrap;
   position: relative;
   z-index: 10;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-  
-}
-header {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+/* Logo Styling */
+.logo {
+  font-weight: bold;
+  font-size: 28px;
+  text-align: left;
+}
 
+/* Navigation */
 nav {
   background-color: var(--primary);
   padding: 1em;
@@ -72,9 +76,7 @@ nav {
   gap: 1rem;
   z-index: 2;
   position: relative;
-  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
 }
-
 
 nav a {
   color: white;
@@ -87,8 +89,7 @@ nav a:hover {
   color: #ffcc00;
 }
 
-/* ...rest of your existing CSS continues here (theme toggle, hero, features, etc.) */
-
+/* Theme Toggle */
 #theme-toggle,
 .theme-switch {
   border: 2px solid #fff;
@@ -220,6 +221,7 @@ button:active,
   color: #fff;
 }
 
+/* Animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
