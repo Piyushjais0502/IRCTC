@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <title>IRCTC Clone</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IRCTC Clone - Home</title>
   <link rel="stylesheet" href="style.css"/>
+  <script src="theme-toggle.js" defer></script>
 </head>
 <body>
   <header>
@@ -17,21 +18,30 @@
       <a href="login.html">Login</a>
       <a href="signup.html">Sign Up</a>
     </nav>
-    <button id="theme-toggle">Dark Mode</button>
+    <button id="theme-toggle" class="theme-switch">🌙 Dark Mode</button>
   </header>
+
   <main>
-    <div class="card">
-      <h1>Welcome to IRCTC Clone</h1>
-      <p>This is a demo train-booking frontend with modern UI/UX.</p>
-    </div>
+
+    <section class="features">
+      <div class="feature">
+        <img src="https://images.unsplash.com/photo-1568667075686-306d743e6dc9?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Easy Booking">
+        <h3>Easy Booking</h3>
+        <p>Reserve your train tickets instantly with our smooth booking flow.</p>
+      </div>
+      <div class="feature">
+        <img src="https://images.unsplash.com/photo-1571893652827-a3e071ab463b?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGluZGlhbiUyMHJhaWx3YXl8ZW58MHx8MHx8fDA%3D" alt="Real-Time PNR">
+        <h3>Real-Time PNR</h3>
+        <p>Check PNR status and train running updates in real-time.</p>
+      </div>
+      <div class="feature">
+        <img src="https://img.freepik.com/premium-photo/man-holding-icon-virtual-247-support-services-worldwide-nonstop-fulltime-available-contact-service-concept-assistance-customer-services-care-consulting-client-24hr-call-center_708636-2009.jpg?semt=ais_hybrid&w=740" alt="24/7 Support">
+        <h3>24x7 Support</h3>
+        <p>We’re here to help you at every step of your journey.</p>
+      </div>
+    </section>
   </main>
+
   <footer>&copy; 2025 IRCTC Clone</footer>
-  <script>
-    const toggle = document.getElementById('theme-toggle');
-    toggle.onclick = () => {
-      document.body.classList.toggle('dark');
-      toggle.textContent = document.body.classList.contains('dark') ? 'Light Mode' : 'Dark Mode';
-    };
-  </script>
 </body>
 </html>
