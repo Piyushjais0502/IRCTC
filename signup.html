@@ -5,8 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <title>Sign Up</title>
   <link rel="stylesheet" href="style.css"/>
-  <script src="theme-toggle.js"></script>
-
+  <script src="theme-toggle.js" defer></script>
 </head>
 <body>
   <header>
@@ -20,35 +19,47 @@
       <a href="signup.html">Sign Up</a>
     </nav>
     <button id="theme-toggle" class="theme-switch">🌙 Dark Mode</button>
-
   </header>
+
   <main>
     <div class="card">
       <h2>Register</h2>
       <form id="signup-form">
         <div class="input-group">
-          <label>Name</label>
-          <input type="text" required placeholder="Your full name"/>
-          <div class="error"></div>
+          <label for="name">Name</label>
+          <input type="text" id="name" required placeholder="Your full name"/>
         </div>
+
         <div class="input-group">
-          <label>Email</label>
-          <input type="email" required placeholder="you@example.com"/>
-          <div class="error"></div>
+          <label for="username">Username</label>
+          <input type="text" id="username" required placeholder="Choose a username"/>
         </div>
+
         <div class="input-group">
-          <label>Password</label>
-          <input type="password" required placeholder="••••••••"/>
-          <div class="error"></div>
+          <label for="email">Email</label>
+          <input type="email" id="email" required placeholder="you@example.com"/>
         </div>
+
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" required placeholder="••••••••"/>
+        </div>
+
+        <div class="input-group">
+          <label for="confirm-password">Confirm Password</label>
+          <input type="password" id="confirm-password" required placeholder="Re-enter password"/>
+        </div>
+
         <button type="submit" class="btn">Sign Up</button>
       </form>
+
       <p style="text-align:center; margin-top:1rem;">
         Already have an account? <a href="login.html">Login here</a>
       </p>
       <div id="signup-output" style="text-align:center; margin-top:1rem;"></div>
     </div>
   </main>
+
   <footer>&copy; 2025 IRCTC Clone</footer>
 </body>
 </html>
