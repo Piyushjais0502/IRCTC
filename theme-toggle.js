@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
-  // =======================
-  // 🌙 Dark Mode Toggle
-  // =======================
+
+  // Dark Mode Toggle
   const toggle = document.getElementById('theme-toggle');
   const isDark = localStorage.getItem('theme') === 'dark';
 
@@ -19,9 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
     localStorage.setItem('theme', darkMode ? 'dark' : 'light');
   });
 
-  // =======================
   // 🔐 Login Form
-  // =======================
   const loginForm = document.getElementById('login-form');
   if (loginForm) {
     loginForm.addEventListener('submit', function (e) {
@@ -30,9 +27,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // =======================
+
   // ✍️ Signup Form Validation
-  // =======================
   const signupForm = document.getElementById('signup-form');
   if (signupForm) {
     signupForm.addEventListener('submit', function (e) {
@@ -66,9 +62,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // =======================
+
   // 🚉 PNR Form
-  // =======================
   const pnrForm = document.getElementById('pnr-form');
   if (pnrForm) {
     pnrForm.addEventListener('submit', function (e) {
@@ -77,9 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // =======================
   // 🎟️ Booking Form + Results
-  // =======================
   const bookingForm = document.getElementById('book-form');
   if (bookingForm) {
     const resultsTable = document.getElementById('results');
@@ -105,42 +98,38 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  // =======================
-  // 🧠 Typing Effect
-  // =======================
- // const typingText = document.getElementById('typing-text');
-  //const phrases = ['Book your journey.', 'Check your PNR.', 'Travel smarter.'];
-  //let phraseIndex = 0;
-  //let letterIndex = 0;
-  //let currentPhrase = '';
-  //let isDeleting = false;
 
-  //function type() {
-    //if (!typingText) return;
-    //currentPhrase = phrases[phraseIndex];
+  const typingText = document.getElementById('typing-text');
+  const phrases = ['Book your journey.', 'Check your PNR.', 'Travel safely.'];
+  let phraseIndex = 0;
+  let letterIndex = 0;
+  let currentPhrase = '';     
+  let isDeleting = false;
 
-    //if (isDeleting) {
-      //typingText.textContent = currentPhrase.substring(0, letterIndex--);
-      //if (letterIndex < 0) {
-        //isDeleting = false;
-        //phraseIndex = (phraseIndex + 1) % phrases.length;
-      //}
-    //} else {
-     // typingText.textContent = currentPhrase.substring(0, letterIndex++);
-      //if (letterIndex > currentPhrase.length) {
-        //isDeleting = true;
-        //letterIndex = currentPhrase.length;
-      //}
-    //}
+  function type() {
+    if (!typingText) return;
+    currentPhrase = phrases[phraseIndex];
 
-    //setTimeout(type, isDeleting ? 100 : 200);
- // }
+    if (isDeleting) {
+      typingText.textContent = currentPhrase.substring(0, letterIndex--);
+      if (letterIndex < 0) {
+        isDeleting = false;
+        phraseIndex = (phraseIndex + 1) % phrases.length;
+      }
+    } else {
+      typingText.textContent = currentPhrase.substring(0, letterIndex++);
+      if (letterIndex > currentPhrase.length) {
+        isDeleting = true;
+        letterIndex = currentPhrase.length;
+      }
+    }
 
- // if (typingText) type();
+    setTimeout(type, isDeleting ? 100 : 200);
+  }
 
-  // =======================
-  // ⬆️ Scroll to Top Button
-  // =======================
+  if (typingText) type();
+
+  // Scroll to Top Button
   const scrollToTopBtn = document.getElementById('scrollToTopBtn');
   if (scrollToTopBtn) {
     window.addEventListener('scroll', () => {
