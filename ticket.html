@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ticket Details</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="logo">Indian Railways</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="book.html">Book Tickets</a>
+      <a href="pnr.html">PNR Status</a>
+      <a href="schedule.html">Schedule</a>
+      <a href="login.html">Login</a>
+      <a href="signup.html">Sign Up</a>
+      <a href="ticket.html">Ticket Details</a>
+    </nav>
+    <button id="theme-toggle" class="theme-switch">🌙 Dark Mode</button>
+  </header>
+
+  <main>
+    <div class="card ticket-details">
+      <h2>Ticket Details</h2>
+      <div id="ticket-container">
+        <div class="ticket">
+          <div class="ticket-header">
+            <h3>E-Ticket / Reservation</h3>
+            <div class="pnr">PNR: <span id="pnr-number"></span></div>
+          </div>
+          <div class="ticket-info">
+            <div class="train-details">
+              <h4>Train Details</h4>
+              <p>Train Number: <span id="train-number"></span></p>
+              <p>Train Name: <span id="train-name"></span></p>
+              <p>From: <span id="source-station"></span></p>
+              <p>To: <span id="destination-station"></span></p>
+              <p>Date: <span id="travel-date"></span></p>
+              <p>Class: <span id="travel-class"></span></p>
+            </div>
+            <div class="passenger-details">
+              <h4>Passenger Details</h4>
+              <p>Name: <span id="passenger-name-display"></span></p>
+              <p>Age: <span id="passenger-age-display"></span></p>
+              <p>Gender: <span id="passenger-gender-display"></span></p>
+              <p>Seat: <span id="seat-number"></span></p>
+            </div>
+            <div class="fare-details">
+              <h4>Fare Details</h4>
+              <p>Base Fare: ₹<span id="base-fare"></span></p>
+              <p>GST: ₹<span id="gst"></span></p>
+              <p>Total Fare: ₹<span id="total-fare"></span></p>
+            </div>
+          </div>
+          <div class="ticket-footer">
+            <p>Happy Journey!</p>
+            <button onclick="window.print()" class="btn">Print Ticket</button>
+          </div>
+        </div>
+      </div>
+      <div id="no-ticket-message" style="display: none;">
+        <p>No ticket details found. Please <a href="book.html">book a ticket</a> first.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>&copy; 2025 Indian Railways</footer>
+</body>
+</html> 

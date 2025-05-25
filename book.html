@@ -5,8 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <title>Book Tickets</title>
   <link rel="stylesheet" href="style.css"/>
-  <script src="theme-toggle.js"></script>
-
+  <script src="script.js" defer></script>
 </head>
 <body>
   <header>
@@ -18,10 +17,11 @@
       <a href="schedule.html">Schedule</a>
       <a href="login.html">Login</a>
       <a href="signup.html">Sign Up</a>
+      <a href="ticket.html">Ticket Details</a>
     </nav>
     <button id="theme-toggle" class="theme-switch">🌙 Dark Mode</button>
-
   </header>
+
   <main>
     <div class="card">
       <h2>Book Your Ticket</h2>
@@ -29,17 +29,14 @@
         <div class="input-group">
           <label for="source">From Station</label>
           <input id="source" name="source" type="text" placeholder="e.g. Mumbai Central" required/>
-          <div class="error"></div>
         </div>
         <div class="input-group">
           <label for="destination">To Station</label>
           <input id="destination" name="destination" type="text" placeholder="e.g. Delhi Junction" required/>
-          <div class="error"></div>
         </div>
         <div class="input-group">
           <label for="date">Travel Date</label>
           <input id="date" name="date" type="date" required/>
-          <div class="error"></div>
         </div>
         <div class="input-group">
           <label for="class">Class</label>
@@ -47,12 +44,10 @@
             <option value="">Select...</option>
             <option>SL</option><option>3A</option><option>2A</option><option>1A</option><option>CC</option>
           </select>
-          <div class="error"></div>
         </div>
         <button type="submit" class="btn">Search Trains</button>
       </form>
 
-      <!-- Mock Results -->
       <table class="results-table" id="results" style="display:none">
         <thead>
           <tr>
@@ -61,9 +56,36 @@
         </thead>
         <tbody></tbody>
       </table>
+
+      <!-- Booking Form (Hidden until selected) -->
+      <div id="passenger-form-container" style="display:none; margin-top:2rem;">
+        <h3>Passenger Details</h3>
+        <form id="passenger-form">
+          <div class="input-group">
+            <label for="passenger-name">Name</label>
+            <input type="text" id="passenger-name" required placeholder="Passenger Name" />
+          </div>
+          <div class="input-group">
+            <label for="passenger-age">Age</label>
+            <input type="number" id="passenger-age" required min="0" />
+          </div>
+          <div class="input-group">
+            <label for="passenger-gender">Gender</label>
+            <select id="passenger-gender" required>
+              <option value="">Select...</option>
+              <option>Male</option>
+              <option>Female</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <input type="hidden" id="selected-train-info" />
+          <button type="submit" class="btn">Confirm Booking</button>
+        </form>
+        <div id="booking-confirmation" style="margin-top: 1rem; color: green; font-weight: bold;"></div>
+      </div>
     </div>
   </main>
-  <footer>&copy; 2025 IRCTC Clone</footer>
 
+  <footer>&copy; 2025 SmartRail</footer>
 </body>
 </html>
